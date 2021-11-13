@@ -16,7 +16,7 @@ mongoose.connect("mongodb+srv://dbadminuser:hHmi3r1F90uQ0OAW@cluster0.qd9fx.mong
 const datapage=require('./data.js');
 app.use("/king",datapage);
 
-app.listen(process.env.PORT || 4000,(data,err)=>{
+app.listen(process.env.PORT|| 4000,(data,err)=>{
     console.log('AWW snap ');
     if(err)
     {
