@@ -1,13 +1,15 @@
 const express=require('express');
 const dotenv=require('dotenv');
 const mongoose=require('mongoose');
+const cors=require('cors');
 dotenv.config();
 
 const app=express();
+app.use(cors())
 
 app.get("/",(req,res)=>{res.send("yummy tomato")})
 app.use(express.json());
-mongoose.connect("mongodb+srv://dbadminuser:hHmi3r1F90uQ0OAW@cluster0.qd9fx.mongodb.net/userdbreview?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology:true},()=>{
+mongoose.connect(process.env.conn,{useNewUrlParser:true,useUnifiedTopology:true},()=>{
 
 
     console.log('connected to db');
